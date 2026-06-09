@@ -17,10 +17,9 @@ jobs:
       run: npm ci
     - name: Install Chromium
       run: |
-           node --version
-           npm --version
-           npx playwright --version
-           npx playwright install chromium
+        echo "Starting Chromium install"
+        npx playwright install chromium
+        echo "Chromium install completed"
     - name: Run Playwright tests
       run: npx playwright test
     - uses: actions/upload-artifact@v4
